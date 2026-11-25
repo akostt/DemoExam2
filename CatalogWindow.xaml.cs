@@ -95,13 +95,13 @@ namespace DemoExam2
 
             ProductList.ItemsSource = products.Select(p => new
             {
-                Id = p.Id,
+                p.Id,
                 Image = GetImagePath(p.Image),
                 Title = $"{p.IdCategoryNavigation.Name} | {p.Name}",
                 Description = "Описание товара: " + p.Description,
                 Manufacturer = "Производитель: " + p.IdManufacturerNavigation.Name,
                 Factory = "Поставщик: " + p.IdFactoryNavigation.Name,
-                Price = p.Price,
+                p.Price,
                 DiscountedPrice = p.Discount > 0
                     ? $"  {p.Price * (100m - p.Discount) / 100m:N2} руб."
                     : string.Empty,
